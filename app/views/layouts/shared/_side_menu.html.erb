@@ -1,0 +1,28 @@
+<div class="h-screen flex flex-col">
+  <div class="flex flex-1">
+    <aside class="w-72 bg-zinc-950 p-6">
+      <nav class="space-y-4 mt-20 flex flex-col">
+        <%= link_to 'Início', authenticated_root_path, class: 'flex items-center font-semibold text-zinc-200' %>
+        <%= link_to 'Peril', class: 'flex items-center font-semibold text-zinc-200' %>
+      </nav>
+    </aside>
+    <main class="flex-1 w-full p-6 ">
+      <div class="mt-10 flex justify-between items-center">
+        <%= link_to 'Sair', destroy_user_session_path, data: { turbo_method: :delete }, class: 'flex items-center font-semibold text-zinc-200 ml-auto' %>
+      </div>
+      <%= yield %>
+    </main>
+  </div>
+  <footer class="bg-zinc-800 border-t border-zinc-700 p-6 text-white text-sm p-4 mt-auto text-zinc-200">
+    <div class="flex justify-between items-center">
+      <div>
+        <p>&copy; 2024 Mateus Inácio. Todos os direitos reservados.</p>
+        <p>Feito com <span class="text-red-500">❤</span> usando Ruby on Rails e TailwindCSS.</p>
+      </div>
+      <div class="space-x-4">
+        <a href="https://github.com/mateusinacioo" target="_blank" class="hover:text-zinc-300">GitHub</a>
+        <a href="https://www.linkedin.com/in/mateus-inacio/" target="_blank" class="hover:text-zinc-300">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</div>

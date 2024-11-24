@@ -11,9 +11,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class="bg-zinc-800 text-zinc-50">
+    <div>
+      <% if user_signed_in? %>
+        <%= render 'layouts/shared/side_menu' %>
+      <% else %>
+        <main>
+          <%= yield %>
+        </main>
+      <% end %>
+    </div>
   </body>
 </html>
