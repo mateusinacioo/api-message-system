@@ -1,16 +1,21 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="h-screen w-screen flex items-center bg-gray-100 justify-center ">
+  <div class="w-full max-w-md">
+    <h2 class="text-gray-800 font-bold text-center p-2 text-2xl">Esqueceu sua senha?</h2>
+      <div class="bg-white shadow-md rounded-md p-6">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="mb-4"> 
+            <%= f.label :email, class:"block text-sm text-gray-800 mb-2"%>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-full bg-gray-50 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 rounded px-3 py-2 text-base text-gray-800 placeholder-gray-300 focus:outline-none transition-all duration-200 ease-in-out" %>
+          </div>
+          
+          <div class="mt-4">
+            <%= f.submit "Envie-me instruções de redefinição de senha", class: 'w-full text-sm bg-blue-500 hover:bg-blue-700 px-6 py-2 rounded text-white shadow cursor-pointer'  %>
+          </div>
+        <% end %>
+        <div class="mt-4">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+  </div>  
+</div>

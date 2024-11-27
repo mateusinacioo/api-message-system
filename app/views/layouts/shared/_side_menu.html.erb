@@ -1,28 +1,57 @@
 <div class="h-screen flex flex-col">
   <div class="flex flex-1">
-    <aside class="w-72 bg-zinc-950 p-6">
+    <aside class="w-72 bg-blue-900 p-6">
       <nav class="space-y-4 mt-20 flex flex-col">
-        <%= link_to 'Início', authenticated_root_path, class: 'flex items-center font-semibold text-zinc-200' %>
-        <%= link_to 'Perfil',edit_user_registration_path, class: 'flex items-center font-semibold text-zinc-200' %>
+        <ul class="ml-4">
+          <li class="mb-2 px-4 py-4 text-gray-100 flex flex-row border-gray-300 hover:bg-blue-700 hover:bg-gray-500 hover:font-bold rounded rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house w-6 h-6 hover:stroke-black">
+              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>
+              <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            </svg>
+            <%= link_to 'Início', authenticated_root_path, class: 'ml-2' %>
+          </li>
+          </li>
+          <li class="mb-2 px-4 py-4 text-gray-100 flex flex-row border-gray-300 hover:bg-blue-700 hover:bg-gray-500 hover:font-bold rounded rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-pen">
+                <path d="M2 21a8 8 0 0 1 10.821-7.487"/>
+                <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/>
+              </svg>
+            <%= link_to 'Perfil',edit_user_registration_path, class: 'ml-2' %>
+          </li>
+          <li class="mb-2 px-4 py-4 text-gray-100 flex flex-row border-gray-300 hover:bg-blue-700 hover:bg-gray-500 hover:font-bold rounded rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-pen">
+                <path d="M2 21a8 8 0 0 1 10.821-7.487"/>
+                <path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="8" r="5"/>
+              </svg>
+            <%= link_to 'Mensagens', messages_path, class: 'ml-2' %>
+          </li>
+        </ul>
       </nav>
     </aside>
     <main class="flex-1 w-full p-6 ">
-      <div class="mt-10 flex justify-between items-center">
-        <%= link_to 'Sair', destroy_user_session_path, data: { turbo_method: :delete }, class: 'flex items-center font-semibold text-zinc-200 ml-auto' %>
+      <div class="mb-2 px-4 py-4 text-gray-100 flex border-gray-300">
+        <div class="ml-auto px-4 py-3 bg-gray-300 text-gray-800 flex flex-row border-gray-300 hover:text-white hover:bg-blue-700 hover:font-bold rounded rounded-lg">
+          <%= link_to 'Sair', destroy_user_session_path, data: { turbo_method: :delete }, class:"mr-2"%>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" x2="9" y1="12" y2="12"/>
+          </svg>
+        </div>
       </div>
       <%= yield %>
     </main>
   </div>
-  <footer class="bg-zinc-800 border-t border-zinc-700 p-6 text-white text-sm p-4 mt-auto text-zinc-200">
+  <footer class="bg-gray-700 border-t border-zinc-700 p-6 text-gray-400 text-sm p-4 mt-auto text-zinc-200">
     <div class="flex justify-between items-center">
       <div>
         <p>&copy; 2024 Mateus Inácio. Todos os direitos reservados.</p>
         <p>Feito com <span class="text-red-500">❤</span> usando Ruby on Rails e TailwindCSS.</p>
       </div>
       <div class="space-x-4">
-        <a href="https://github.com/mateusinacioo" target="_blank" class="hover:text-zinc-300">GitHub</a>
-        <a href="https://www.linkedin.com/in/mateus-inacio/" target="_blank" class="hover:text-zinc-300">LinkedIn</a>
+        <a href="https://www.google.com.br/" target="_blank" class="hover:text-zinc-300">Site</a>
       </div>
     </div>
   </footer>
 </div>
+

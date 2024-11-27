@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     controllers: { sessions: 'users/sessions', registrations: 'users/accounts' }
 
   root to: 'home#index', as: :authenticated_root
+
+  resources :messages
   
   get "/users/sign_in", to: "users/sessions#new"
   
