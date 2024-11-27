@@ -4,6 +4,7 @@ class WebhooksController < ApplicationController
 
   def create
     user_data = params.require(:user).permit(:email, :full_name, :birth_date, :cpf, :status)
+    user_data[:status] = user_data[:status].nil? ? true : user_data[:status]
     password = SecureRandom.hex(8)
     user_data[:password] = password
     user = User.new(user_data)

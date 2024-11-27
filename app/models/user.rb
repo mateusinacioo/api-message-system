@@ -6,7 +6,15 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   validates :cpf, presence: true, uniqueness: true, format: { with: /\A\d{11}\z/, message: "deve ter 11 dígitos" }
 
+  after_create :send_welcome_email 
+
   def active?
     status
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.with(user: self, password: self.password).welcome_email.deliver_now
   end
 end
