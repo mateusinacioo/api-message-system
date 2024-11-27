@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+
+  devise_for :users, 
+    controllers: { sessions: 'users/sessions', registrations: 'users/accounts' }
 
   root to: 'home#index', as: :authenticated_root
   
