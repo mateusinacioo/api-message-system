@@ -1,7 +1,8 @@
 class WebhooksController < ApplicationController
+  before_action :authenticate_with_token, only: [:create, :update]
   protect_from_forgery with: :null_session
 
-  def create_users
+  def create
     user_data = params.require(:user).permit(:email, :full_name, :birth_date, :cpf, :status)
     password = SecureRandom.hex(8)
     user_data[:password] = password
@@ -14,7 +15,7 @@ class WebhooksController < ApplicationController
     end
   end
 
-  def update_users
+  def update
     user = User.find_by(id: params[:id])
 
     if user.nil?
@@ -30,4 +31,14 @@ class WebhooksController < ApplicationController
       render json: { error: user.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  private 
+
+  def authenticate_with_token
+    token = request.headers["Authorization"]&.split(" ")&.last
+    if token != ENV["API_AUTH_TOKEN"]
+      render json: { error: "Unauthorized" }, status: :unauthorized
+    end
+  end
+
 end

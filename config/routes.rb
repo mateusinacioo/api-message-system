@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   root to: 'home#index', as: :authenticated_root
   
   get "/users/sign_in", to: "users/sessions#new"
-  post 'webhooks/create_users', to: 'webhooks#create_users'
-  patch 'webhooks/update_users/:id', to: 'webhooks#update_users'
+  
+  resources :webhooks, only: [:create, :update]
   
   get "up" => "rails/health#show", as: :rails_health_check
-
 end
