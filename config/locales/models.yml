@@ -1,0 +1,44 @@
+pt-BR:
+  activerecord:
+    models:
+      admin: Administrador
+      user: Usuário
+      article: Artigo
+      comment: Comentário
+    attributes:
+      user:
+        id: Identificador
+        email: E-mail
+        full_name: Nome completo
+        birth_date: Data de nascimento
+        encrypted_password: Senha encriptada
+        reset_password_token: Token de reset de senha
+        reset_password_sent_at: Reset de senha enviado em
+        remember_created_at: Lembrar criado em
+        created_at: Criado em
+        updated_at: Atualizado em
+      article:
+        id: Identificador
+        title: Título
+        body: Corpo
+        category_id: Categoria
+        author_id: Autor
+        created_at: Criado em
+        updated_at: Atualizado em
+        slug: Slug
+        cover_image: Imagem de capa
+      comment:
+        id: Identificador
+        body: Comentário
+        article_id: Artigo
+        author_id: Autor
+        created_at: Criado em
+        updated_at: Atualizado em
+      author:
+        name: Nome
+        description: Descrição
+        facebook_profile_url: URL do perfil Facebook
+        instagram_profile_url: URL do perfil Instagram
+        twitter_profile_url: URL do perfil Twitter
+        linkedin_profile_url: URL do perfil Linkedin
+        youtube_profile_url: URL do canal YouTube

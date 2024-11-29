@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <%= javascript_importmap_tags %>
   </head>
 
@@ -21,5 +22,29 @@
         </main>
       <% end %>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <% if notice %>
+      <script>
+        Toastify({
+          text: "<%= notice %>" ,
+          duration: 3000,
+          style: {
+            background: "green",
+          }
+        }).showToast();
+      </script>
+  <% end %>
+
+      <% if alert %>
+      <script>
+        Toastify({
+          text: "<%= alert %>" ,
+          duration: 3000,
+          style: {
+            background: "#930f17",
+          }
+        }).showToast();
+      </script>
+    <% end %>
   </body>
 </html>

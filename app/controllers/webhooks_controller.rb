@@ -10,7 +10,7 @@ class WebhooksController < ApplicationController
     user = User.new(user_data)
 
     if user.save
-      render json: { message: 'Usuário criado com sucesso!', password: password }, status: :created
+      render json: { message: 'Usuário criado com sucesso, aguarde o envio do e-mail' }, status: :created
     else
       render json: { error: user.errors.full_messages }, status: :unprocessable_entity
     end
