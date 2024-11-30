@@ -3,6 +3,7 @@
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <%= link_to "Esqueceu sua senha?", "#", onclick: "alert('Por favor, entre em contato com o suporte para recuperar sua senha.')", class:"block text-sm text-gray-800" %>
 <% end %>
+
 
