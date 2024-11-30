@@ -34,6 +34,16 @@ Este projeto consiste no desenvolvimento inicial de um sistema de mensagens que 
    ```
    rails db:create db:migrate
    ```
+4. Execute a aplicação:
+   
+   ```
+   ./bin/dev
+   ```
+5. Acesse o navegado em:
+   
+   ```
+   http://localhost:3000/
+   ```
 
 ## Criar e Atualizar Usuários via API
 
