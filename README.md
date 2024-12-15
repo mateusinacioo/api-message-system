@@ -1,4 +1,4 @@
-# Desafio: Vaga Pessoa Desenvolvedora Web Júnior
+# Desafio: Pessoa Desenvolvedora Web Júnior
 
 Este projeto consiste no desenvolvimento inicial de um sistema de mensagens que recebe e dispara um webhook, criando novos usuários e fornecendo autenticação via API.
 
@@ -85,7 +85,3 @@ O arquivo `.env` já consta a variável de ambiente `API_AUTH_TOKEN` com o TOKEN
 - i18n: Implementado para internacionalizar o Devise.
 - dotenv: Gerencia variáveis de ambiente para utilizar a autenticação por tokens.
 - Rails + PostgreSQL: Venho estudando há um tempo o Rails e o PostgreSQL por ser o banco de dados que mais tenho conhecimento.
-
-## Status do Projeto
-
-De todos os itens obrigatórios não foi atendido a redefinição de senha no primeiro acesso.
