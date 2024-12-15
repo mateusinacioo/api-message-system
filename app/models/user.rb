@@ -8,10 +8,6 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email 
 
-  def active?
-    status
-  end
-
   private
 
   def send_welcome_email

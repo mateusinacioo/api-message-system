@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users, 
-    controllers: { sessions: 'users/sessions', registrations: 'users/accounts' }
+    controllers: { registrations: 'users/accounts' }
 
   root to: 'home#index', as: :authenticated_root
 
   resources :messages
-  
-  get "/users/sign_in", to: "users/sessions#new"
   
   resources :webhooks, only: [:create, :update]
   
