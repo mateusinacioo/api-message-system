@@ -7,7 +7,9 @@ Este projeto consiste no desenvolvimento inicial de um sistema de mensagens que 
 2. Edição de dados do usuário;
 3. Recebimento de dados via webhooks para criação de usuários;
 4. Envio de e-mails com senha provisória (Letter Opener);
-5. Autenticação BASIC AUTH com TOKEN.
+5. Autenticação BASIC AUTH com TOKEN;
+6. Ativa e desatava usuários;
+7. Alterar senha no primeiro acesso.
 
 ## Tecnologias Utilizadas
 - Ruby 3.3.0
@@ -20,23 +22,23 @@ Este projeto consiste no desenvolvimento inicial de um sistema de mensagens que 
 ## Inicialização do Projeto
 1. Clone o repositório:
    
-   ```
+   ```bash
    git clone git@github.com:mateusinacioo/api-message-system.git
    cd api-message-system
    ```
 2. Instale as dependências:
    
-   ```
+   ```bash
    bundle install
    ```
 3. Crie o banco de dados:
    
-   ```
+   ```bash
    rails db:create db:migrate
    ```
 4. Execute a aplicação:
    
-   ```
+   ```bash
    ./bin/dev
    ```
 5. Acesse o navegado em:
@@ -51,7 +53,7 @@ O arquivo `.env` já consta a variável de ambiente `API_AUTH_TOKEN` com o TOKEN
 
 1. Criar Usuário via API pelo console. Após execução será aberta uma aba em seu navegador com o e-mail de Boas-vindas.
    
-   ```
+   ```bash
    curl -X POST http://localhost:3000/webhooks \
     -H "Content-Type: application/json" \
     -H "Authorization: Basic YXBpdXNlcjphcGlzZWNyZXQ=" \
@@ -66,7 +68,7 @@ O arquivo `.env` já consta a variável de ambiente `API_AUTH_TOKEN` com o TOKEN
    ```
 2. Para atualizar usuário utilize o seguinte comando e na URL adicione o `ID` do usuário a ser atualizado.
    
-   ```
+   ```bash
     curl -X PATCH http://localhost:3000/webhooks/ID \
       -H "Content-Type: application/json" \
       -H "Authorization: Basic YXBpdXNlcjphcGlzZWNyZXQ=" \
